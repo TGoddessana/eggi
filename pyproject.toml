@@ -47,6 +47,7 @@ nox-poetry = "^1.0.3"
 
 # test
 pytest = "^7.4.3"
+coverage = "^7.3.2"
 
 
 [tool.poetry.extras]
