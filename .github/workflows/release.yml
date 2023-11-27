@@ -76,7 +76,7 @@ jobs:
       - run: |
           poetry add mkdocs mkdocs-material "mkdocstrings[crystal,python]"
           poetry run mkdocs build --clean --strict
-          mkdocs gh-deploy --force
+          poetry run mkdocs gh-deploy --force
 
       - name: Publish package on TestPyPI
         if: "! steps.check-version.outputs.tag"
