@@ -73,7 +73,7 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-        run: |
+      - run: |
           poetry add mkdocs mkdocs-material "mkdocstrings[crystal,python]"
           poetry run mkdocs build --clean --strict
       - run: mkdocs gh-deploy --force
