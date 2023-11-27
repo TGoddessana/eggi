@@ -93,7 +93,7 @@ jobs:
           path: ".coverage.*"
 
       - name: Upload documentation
-        if: matrix.session == 'docs-build'
+        if: matrix.session == 'mkdocs-build'
         uses: actions/upload-artifact@v3
         with:
           name: docs
