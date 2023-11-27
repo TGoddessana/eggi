@@ -61,7 +61,7 @@ def tests(_session: Session) -> None:
 def mkdocs_build(_session: Session) -> None:
     """Build the documentation."""
     _session.install(".")
-    _session.run("pip", "install", "-r", "requirements/docs.txt")
+    _session.install("mkdocs", "mkdocs-material", "mkdocstrings")
     mkdocs_args = _session.posargs or ["build"]
 
     _session.run("mkdocs", *mkdocs_args)
@@ -71,7 +71,7 @@ def mkdocs_build(_session: Session) -> None:
 def mkdocs_serve(_session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     _session.install(".")
-    _session.run("pip", "install", "-r", "requirements/docs.txt")
+    _session.install("mkdocs", "mkdocs-material", "mkdocstrings")
     mkdocs_args = _session.posargs or ["serve"]
 
     _session.run("mkdocs", *mkdocs_args)

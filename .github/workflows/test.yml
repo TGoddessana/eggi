@@ -96,8 +96,8 @@ jobs:
         if: matrix.session == 'mkdocs-build'
         uses: actions/upload-artifact@v3
         with:
-          name: docs
-          path: docs/_build
+          name: site
+          path: site
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
