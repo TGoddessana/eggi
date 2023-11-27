@@ -8,4 +8,5 @@ def say_something(something: str) -> str:
     Returns: something said.
 
     """
+    print(f"Something: {something}")
     return f"Something: {something}"
