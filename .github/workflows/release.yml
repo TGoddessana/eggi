@@ -73,9 +73,10 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
+        run: |
+          poetry add mkdocs mkdocs-material "mkdocstrings[crystal,python]"
+          poetry run mkdocs build --clean --strict
       - run: mkdocs gh-deploy --force
-
       - name: Publish package on TestPyPI
         if: "! steps.check-version.outputs.tag"
         uses: pypa/gh-action-pypi-publish@v1.5.0
