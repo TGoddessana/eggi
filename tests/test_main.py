@@ -2,4 +2,5 @@ from eggi.main import say_something
 
 
 def test_say_something():
-    assert say_something() == "Hello World!"
+    something = "Hello World!"
+    assert say_something(something) == "Something: Hello World!"

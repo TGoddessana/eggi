@@ -45,6 +45,19 @@ def mypy(_session: Session) -> None:
     _session.run("mypy", *mypy_args)
 
 
+@session(name="tests", python=python_versions)
+def tests(_session: Session) -> None:
+    """Run the test suite."""
+    _session.install(".")
+    _session.install("pytest")
+
+    pytest_args = _session.posargs or [
+        ".",
+    ]
+
+    _session.run("pytest", *pytest_args)
+
+
 @session(name="mkdocs-build", python=python_versions[0])
 def mkdocs_build(_session: Session) -> None:
     """Build the documentation."""
