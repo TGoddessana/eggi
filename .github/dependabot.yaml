@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: ⬆
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: daily
+    versioning-strategy: lockfile-only
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: ⬆

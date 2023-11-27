@@ -1,0 +1,16 @@
+site_name: Eggi
+
+site_description: An ASGI framework with a little something for everyone. Let's start with an egg.🥚
+
+theme:
+  name: material
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+  - Reference: reference.md
+
+watch:
+  - eggi
