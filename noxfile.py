@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import nox
 from nox_poetry import Session, session
 
@@ -54,23 +56,23 @@ def tests(_session: Session) -> None:
     pytest_args = _session.posargs or [
         ".",
     ]
-
-    # _session.run("pytest", *pytest_args)
-    _session.run("coverage", "run", "--parallel", "-m", "pytest", *pytest_args)
+    try:
+        _session.run("coverage", "run", "--parallel", "-m", "pytest", *pytest_args)
+    finally:
+        if _session.interactive:
+            _session.notify("coverage", posargs=[])
 
 
 @session(python=python_versions[0])
-def coverage(session: Session) -> None:
+def coverage(_session: Session) -> None:
     """Produce the coverage report."""
-    args = session.posargs or ["report"]
-    session.install("coverage[toml]")
+    args = _session.posargs or ["report"]
+    _session.install("coverage[toml]")
 
-    from pathlib import Path
+    if not _session.posargs and any(Path().glob(".coverage.*")):
+        _session.run("coverage", "combine")
 
-    if not session.posargs and any(Path().glob(".coverage.*")):
-        session.run("coverage", "combine")
-
-    session.run("coverage", *args)
+    _session.run("coverage", *args)
 
 
 @session(name="mkdocs-build", python=python_versions[0])
