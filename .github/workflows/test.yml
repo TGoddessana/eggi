@@ -53,7 +53,7 @@ jobs:
 
       - name: Install Nox
         run: |
-          pipx install nox
+          pipx install nox nox-poetry
           pipx inject poetry poetry-plugin-export
           nox --version
 
