@@ -49,12 +49,28 @@ def tests(_session: Session) -> None:
     """Run the test suite."""
     _session.install(".")
     _session.install("pytest")
+    _session.install("coverage[toml]")
 
     pytest_args = _session.posargs or [
         ".",
     ]
 
-    _session.run("pytest", *pytest_args)
+    # _session.run("pytest", *pytest_args)
+    _session.run("coverage", "run", "--parallel", "-m", "pytest", *pytest_args)
+
+
+@session(python=python_versions[0])
+def coverage(session: Session) -> None:
+    """Produce the coverage report."""
+    args = session.posargs or ["report"]
+    session.install("coverage[toml]")
+
+    from pathlib import Path
+
+    if not session.posargs and any(Path().glob(".coverage.*")):
+        session.run("coverage", "combine")
+
+    session.run("coverage", *args)
 
 
 @session(name="mkdocs-build", python=python_versions[0])
