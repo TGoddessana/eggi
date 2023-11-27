@@ -45,6 +45,10 @@ mypy = "^1.7.1"
 nox = "^2023.4.22"
 nox-poetry = "^1.0.3"
 
+# test
+pytest = "^7.4.3"
+coverage = "^7.3.2"
+
 
 [tool.poetry.extras]
 dev = [

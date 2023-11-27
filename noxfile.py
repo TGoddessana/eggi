@@ -3,7 +3,6 @@ from nox_poetry import Session, session
 
 package = "eggi"
 python_versions = [
-    "3.12",
     "3.11",
     "3.10",
     "3.9",
@@ -45,11 +44,24 @@ def mypy(_session: Session) -> None:
     _session.run("mypy", *mypy_args)
 
 
+@session(name="tests", python=python_versions)
+def tests(_session: Session) -> None:
+    """Run the test suite."""
+    _session.install(".")
+    _session.install("pytest")
+
+    pytest_args = _session.posargs or [
+        ".",
+    ]
+
+    _session.run("pytest", *pytest_args)
+
+
 @session(name="mkdocs-build", python=python_versions[0])
 def mkdocs_build(_session: Session) -> None:
     """Build the documentation."""
     _session.install(".")
-    _session.run("pip", "install", "-r", "requirements/docs.txt")
+    _session.install("mkdocs", "mkdocs-material", "mkdocstrings[crystal,python]")
     mkdocs_args = _session.posargs or ["build"]
 
     _session.run("mkdocs", *mkdocs_args)
@@ -59,7 +71,7 @@ def mkdocs_build(_session: Session) -> None:
 def mkdocs_serve(_session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     _session.install(".")
-    _session.run("pip", "install", "-r", "requirements/docs.txt")
+    _session.install("mkdocs", "mkdocs-material", "mkdocstrings[crystal,python]")
     mkdocs_args = _session.posargs or ["serve"]
 
     _session.run("mkdocs", *mkdocs_args)
