@@ -65,6 +65,7 @@ jobs:
       - name: Build documentation
         if: steps.check-version.outputs.tag
         run: |
+          poetry add mkdocs mkdocs-material "mkdocstrings[crystal,python]"
           poetry run mkdocs build --clean --strict
       - uses: actions/cache@v3
         with:
