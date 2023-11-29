@@ -1,4 +1,4 @@
-<img src="docs/images/eggi-logo-title.png" width="300px;">
+<img src="docs/images/eggi-logo-title-description.png" width="300px;">
 
 # Eggi Framework
 
