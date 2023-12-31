@@ -1,25 +1,19 @@
-<img src="docs/images/eggi-logo-title-description.png" width="300px;">
+<div style="text-align: center;">
+
+<img src="docs/images/eggi-logo.png" width="300px;" alt="Eggi logo"/>
 
 # Eggi Framework
 
-[![PyPI](https://img.shields.io/pypi/v/eggi.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/eggi.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/eggi)][python version]
-[![License](https://img.shields.io/badge/license-MIT-blue)][license]
+### An ASGI framework with a little something for everyone. Let's start with an egg.🥚
 
-[![Tests](https://github.com/tgoddessana/eggi/workflows/Tests/badge.svg)][tests]
-[![Codecov](https://codecov.io/gh/tgoddessana/eggi/branch/main/graph/badge.svg)][codecov]
+| Project | Status                                                                                                                                                                                      |
+| ------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CI&CD   | [![Tests](https://github.com/tgoddessana/eggi/workflows/Tests/badge.svg)][tests] [![Codecov](https://codecov.io/gh/tgoddessana/eggi/branch/main/graph/badge.svg)][codecov]                  |
+| Package | [![PyPI](https://img.shields.io/pypi/v/eggi.svg)][pypi_] [![PyPI - Downloads](https://img.shields.io/pypi/dm/eggi)][pypi_] [![Status](https://img.shields.io/pypi/status/eggi.svg)][status] |
+| Python  | [![Python Version](https://img.shields.io/pypi/pyversions/eggi)][python version]                                                                                                            |
+| License | [![License](https://img.shields.io/badge/license-MIT-blue)][license]                                                                                                                        |
 
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
-[![ruff](https://img.shields.io/badge/code%20style-black-000000.svg)][ruff]
-
-[pypi_]: https://pypi.org/project/eggi/
-[status]: https://pypi.org/project/eggi/
-[python version]: https://pypi.org/project/eggi
-[tests]: https://github.com/tgoddessana/eggi/actions?workflow=Tests
-[codecov]: https://app.codecov.io/gh/tgoddessana/eggi
-[pre-commit]: https://github.com/pre-commit/pre-commit
-[ruff]: https://img.shields.io/badge/code%20style-ruff-000000.svg
+</div>
 
 ## Features
 
@@ -47,11 +41,10 @@ _Eggi_ is free and open source software.
 If you encounter any problems,
 please [file an issue] along with a detailed description.
 
-[pypi]: https://pypi.org/
+[pypi_]: https://pypi.org/project/eggi/
+[status]: https://pypi.org/project/eggi/
+[python version]: https://pypi.org/project/eggi
+[tests]: https://github.com/tgoddessana/eggi/actions?workflow=Tests
+[codecov]: https://app.codecov.io/gh/tgoddessana/eggi
 [file an issue]: https://github.com/tgoddessana/eggi/issues
-[pip]: https://pip.pypa.io/
-
-<!-- github-only -->
-
 [license]: https://github.com/tgoddessana/eggi/blob/main/LICENSE
-[contributor guide]: https://github.com/tgoddessana/eggi/blob/main/CONTRIBUTING.md
