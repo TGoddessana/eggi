@@ -4,6 +4,8 @@ site_description: An ASGI framework with a little something for everyone. Let's 
 
 theme:
   name: material
+  logo: images/eggi-logo.png
+  favicon: images/eggi-logo.png
 
 plugins:
   - mkdocstrings
