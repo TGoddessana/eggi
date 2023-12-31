@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div align="center">
 
 <img src="docs/images/eggi-logo.png" width="300px;" alt="Eggi logo"/>
 
