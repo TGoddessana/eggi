@@ -67,7 +67,7 @@ jobs:
         run: |
           poetry add mkdocs mkdocs-material "mkdocstrings[crystal,python]"
           poetry run mkdocs build --clean --strict
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
